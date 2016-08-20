@@ -1,0 +1,26 @@
+<html>
+<script src="/node_modules/socket.io-client/socket.io.js"></script>
+<script>
+
+  var getQueryString = function ( field, url ) {
+      var href = url ? url : window.location.href;
+      var reg = new RegExp( '[?&]' + field + '=([^&#]*)', 'i' );
+      var string = reg.exec(href);
+      return string ? string[1] : null;
+  };
+
+  var matchId = getQueryString('match');
+  if(matchId) {
+    console.log('Subscribing to events for match ' + matchId);
+
+    var socket = io.connect('http://localhost:3100?match=' + matchId);
+    socket.on('score-change', function (data) {
+      console.log(data);
+    });
+  }
+  else {
+    console.log('A match value in the querystring is required');
+  }
+</script>
+
+</html>

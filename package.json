@@ -1,0 +1,29 @@
+{
+  "name": "cricd-change-publisher",
+  "version": "1.0.0",
+  "description": "A websocket endpoint which publishes changes to a matches score",
+  "main": "index.js",
+  "scripts": {
+    "debug": "DEBUG=* node-debug index.js",
+    "start": "DEBUG=* node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bradleyscott/cricd-change-publisher.git"
+  },
+  "author": "Bradley Scott",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bradleyscott/cricd-change-publisher/issues"
+  },
+  "homepage": "https://github.com/bradleyscott/cricd-change-publisher#readme",
+  "dependencies": {
+    "debug": "^2.2.0",
+    "express": "^4.14.0",
+    "ges-client": "^0.10.0",
+    "html": "^1.0.0",
+    "node-rest-client": "^2.0.1",
+    "socket.io": "^1.4.8"
+  }
+}
