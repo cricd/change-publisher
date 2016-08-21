@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bradleyscott/cricd-change-publisher.git"
+    "url": "git+https://github.com/cricd/change-publisher.git"
   },
   "author": "Bradley Scott",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/bradleyscott/cricd-change-publisher/issues"
+    "url": "https://github.com/cricd/change-publisher/issues"
   },
-  "homepage": "https://github.com/bradleyscott/cricd-change-publisher#readme",
+  "homepage": "https://github.com/cricd/change-publisher#readme",
   "dependencies": {
     "debug": "^2.2.0",
     "express": "^4.14.0",
