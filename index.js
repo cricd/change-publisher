@@ -5,7 +5,8 @@ var server = require('http').createServer(app);
 var io = require('socket.io')(server);
 var scoreProcessor = require('./scoreProcessor');
 
-io.set('origins', '*localhost*:*');
+var allowedOrigins = process.env.ALLOWED_ORIGINS ? process.env.ALLOWED_ORIGINS : '*localhost*';
+io.set('origins', allowedOrigins);
 
 // Subscribe any client to a match subscription
 io.on('connection', function(socket) {
