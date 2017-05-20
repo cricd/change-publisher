@@ -8,12 +8,6 @@ It is also dependent on a [cricd-score-processor](https://github.com/bradleyscot
 
 You can specify these environment variables when running the docker container. For example `docker run -d -p 3100:3100 -e EVENTSTORE_HOST=172.18.0.2 SCOREPROCESSOR_HOST=172.18.0.3 bradleyscott/cricd-change-publisher`
 
-If your EventStore instance is running in a Docker container as well then network connectivity will need to be established between these instances. This is explained in the [Docker networking documentation](https://docs.docker.com/engine/userguide/networking/dockernetworks/) but the steps at a high level are:
-1. Create a user defined network using a command like `docker network create --driver bridge cricd-network`
-2. Start your EventStore container using the --network parameter `docker run --net=cricd-network`
-3. Find the IP address of the EventStore container using the command `docker network inspect cricd-network`
-4. Start this Docker container using the `--net=cricd-network` parameter and using the `EVENTSTORE_HOST` variable set to the IP address you just found
-
 Alternatively, you can clone the [code repository for this service](https://github.com/bradleyscott/cricd-change-publisher) and use Docker-Compose to spin up a environment containing both EventStore and this service which removes the need to perform these steps
 
 ## Using the endpoint
